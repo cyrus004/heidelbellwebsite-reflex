@@ -1,41 +1,15 @@
-# """Welcome to Reflex! This file outlines the steps to create a basic app."""
-#
 import reflex as rx
-#
-from rxconfig import config
 
-
-#
-#
-class State(rx.State):
-    """The app state."""
-
-    ...
-
-
-# def index() -> rx.Component:
-#     # Welcome Page (Index)
-#     return rx.container(
-#         rx.color_mode.button(position="top-right"),
-#         rx.vstack(
-#             rx.heading("Welcome to Reflex!", size="9"),
-#             rx.text(
-#                 "Get started by editing ",
-#                 rx.code(f"{config.app_name}/{config.app_name}.py"),
-#                 size="5",
-#             ),
-#             rx.link(
-#                 rx.button("Check out our docs!"),
-#                 href="https://reflex.dev/docs/getting-started/introduction/",
-#                 is_external=True,
-#             ),
-#             spacing="5",
-#             justify="center",
-#             min_height="85vh",
-#         ),
-#         rx.logo(),
-#     )
-#
+def index() -> rx.Component:
+    # Welcome Page (Index)
+        return rx.container(
+        create_header(),
+        create_main_content(),
+        create_footer(),
+        class_name="dark:bg-gray-800",
+        background_color="#F3F4F6",
+    )
+    
 def create_nav_link(text):
     """Create a navigation link with custom styling."""
     return rx.el.a(
@@ -781,6 +755,5 @@ def create_page():
         ),
     )
 
-
 app = rx.App()
-# app.add_page(create_nav_link)
+app.add_page(index)
