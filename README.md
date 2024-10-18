@@ -1,2 +1,11 @@
 # heidelbellwebsite-reflex
-Heidelbell-website-with-relfex
+
+# to run the app
+pip install reflex 
+
+reflex init
+
+reflex run
+
+#recommended method 
+reflex run --frontend-only
